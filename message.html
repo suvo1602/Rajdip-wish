@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Message ❤️</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+
+    font-family:Poppins,sans-serif;
+
+    color:white;
+
+    overflow:hidden;
+
+}
+
+
+
+
+/* Message Card */
+
+.card{
+
+    width:90%;
+
+    max-width:650px;
+
+    height:600px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 40px rgba(0,0,0,.3);
+
+}
+
+
+
+/* Title */
+
+h1{
+
+    font-size:35px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* Scroll Message */
+
+.message{
+
+    height:390px;
+
+    overflow:hidden;
+
+    font-family:'Hind Siliguri',sans-serif;
+
+    font-size:24px;
+
+    line-height:2;
+
+    text-align:center;
+
+}
+
+
+
+/* Moving text */
+
+.scroll-text{
+
+    animation:scroll 25s linear infinite;
+
+}
+
+
+
+@keyframes scroll{
+
+
+from{
+
+    transform:translateY(100%);
+
+}
+
+
+to{
+
+    transform:translateY(-100%);
+
+}
+
+
+}
+
+
+
+/* Button */
+
+
+button{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    padding:12px 35px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff4081;
+    font-size:18px;
+    cursor:pointer;
+}
+
+
+
+/* Floating hearts */
+
+
+.heart{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    font-size:30px;
+
+    animation:heart 8s linear infinite;
+
+}
+
+
+
+@keyframes heart{
+
+
+100%{
+
+    transform:translateY(-120vh);
+
+    opacity:0;
+
+}
+
+
+}
+
+.message-card{
+    width:92%;
+    max-width:700px;
+    margin:40px auto;
+    padding:25px;
+    position:relative;
+
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(20px);
+
+    border:2px solid rgba(255,255,255,.4);
+    border-radius:30px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.pin{
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+    background:rgba(255,20,147,.85);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:26px;
+
+    box-shadow:0 5px 20px rgba(255,20,147,.5);
+}
+
+.title{
+    color:white;
+    text-align:center;
+    margin-bottom:25px;
+    font-size:30px;
+}
+
+.message-box{
+
+    height:380px;
+
+    overflow-y:auto;
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:#fffdf8;
+
+    color:#444;
+
+    box-shadow:inset 0 0 20px rgba(0,0,0,.08);
+
+    scrollbar-width:thin;
+}
+
+.scroll-text{
+
+    animation:fadeIn 1.2s;
+}
+
+@keyframes fadeIn{
+
+from{
+    opacity:0;
+    transform:translateY(20px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+.bengali-text{
+
+    font-family:'Hind Siliguri',sans-serif;
+
+    font-size:24px;
+
+    line-height:2;
+
+    text-align:center;
+}
+
+@media(max-width:600px){
+
+.title{
+    font-size:22px;
+}
+
+.message-box{
+    height:300px;
+}
+
+.bengali-text{
+    font-size:20px;
+}
+
+.pin{
+    width:45px;
+    height:45px;
+    font-size:22px;
+}
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+   
+
+
+<!-- Floating Hearts -->
+
+<div class="heart" style="left:10%;animation-delay:1s;">❤️</div>
+
+<div class="heart" style="left:30%;animation-delay:3s;">💖</div>
+
+<div class="heart" style="left:50%;animation-delay:5s;">❤️</div>
+
+<div class="heart" style="left:70%;animation-delay:2s;">💗</div>
+
+<div class="heart" style="left:90%;animation-delay:4s;">❤️</div>
+
+
+
+
+<div class="message-card">
+
+    <div class="pin">❤️</div>
+
+    <h2 class="title">💌 A Special Birthday Message 💌</h2>
+
+    <div class="message-box" id="messageBox">
+
+  
+            <p class="bengali-text">
+            🎂 শুভ জন্মদিন রাজদীপ! 🎉
+            <br><br>
+
+            আজকের এই বিশেষ দিনে তোমার জীবনে
+            অফুরন্ত সুখ, শান্তি, ভালোবাসা ও সাফল্য নেমে আসুক। ❤️
+
+            <br><br>
+
+            তোমার মতো একজন ভালো বন্ধুকে পেয়ে
+            আমি সত্যিই অনেক ভাগ্যবান।
+
+            <br><br>
+
+            আমাদের বন্ধুত্ব যেন সারাজীবন
+            এভাবেই অটুট থাকে।
+
+            <br><br>
+
+            তোমার প্রতিটি স্বপ্ন পূরণ হোক,
+            তোমার প্রতিটি দিন আনন্দে ভরে উঠুক।
+
+            <br><br>
+
+            সবসময় হাসিখুশি থেকো,
+            সুস্থ থেকো এবং জীবনে অনেক বড় হও।
+
+            <br><br>
+
+            🎉 আবারও জানাই—
+            <br><br>
+
+            শুভ জন্মদিন আমার প্রিয় বন্ধু রাজদীপ! ❤️🎂
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="home-btn">
+    <button onclick="location.href='index.html'">
+        🏠 Home
+    </button>
+
+</div>
+
+
+<script>
+const box = document.getElementById("messageBox");
+
+let speed = 1;
+
+setInterval(() => {
+
+    if (box.scrollTop + box.clientHeight >= box.scrollHeight) {
+        box.scrollTop = 0;
+    } else {
+        box.scrollTop += speed;
+    }
+
+}, 40);
+</script>
+
+</body>
+
+</html>

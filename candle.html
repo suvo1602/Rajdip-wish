@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blow Candle 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+height:100vh;
+
+background:linear-gradient(135deg,#141e30,#243b55);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-family:Poppins,sans-serif;
+
+color:white;
+
+overflow:hidden;
+
+}
+
+
+.container{
+
+text-align:center;
+
+}
+
+
+h1{
+
+font-size:45px;
+
+}
+
+
+#text{
+
+font-size:24px;
+
+margin:20px;
+
+}
+
+
+
+.cake{
+
+margin:40px auto;
+
+width: 250px;px;
+
+}
+
+
+
+.candle{
+
+width:20px;
+
+height:70px;
+
+background:white;
+
+margin:auto;
+
+position:relative;
+
+}
+
+
+
+.flame{
+
+width:35px;
+
+height:45px;
+
+background:orange;
+
+border-radius:50%;
+
+position:absolute;
+
+top:-45px;
+
+left:-8px;
+
+animation:fire .5s infinite alternate;
+
+}
+
+
+
+@keyframes fire{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.2);
+}
+
+}
+
+
+.layer{
+
+height:60px;
+
+margin:auto;
+
+border-radius:15px;
+
+background:#ff4081;
+
+box-shadow:0 5px 10px black;
+
+}
+
+
+.layer:nth-child(2){
+
+width:220px;
+
+}
+
+
+.layer:nth-child(3){
+
+width:180px;
+
+background:#ff80ab;
+
+}
+
+
+.layer:nth-child(4){
+
+width:140px;
+
+background:#f8bbd0;
+
+}
+
+
+
+button{
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:40px;
+
+font-size:20px;
+
+cursor:pointer;
+
+margin:10px;
+
+background:#ff4081;
+
+color:white;
+
+}
+
+
+
+#next{
+
+display:none;
+
+background:white;
+
+color:#ff4081;
+
+}
+
+
+
+.hide{
+
+display:none;
+
+}
+
+
+
+.firework{
+
+position:absolute;
+
+width:10px;
+
+height:10px;
+
+border-radius:50%;
+
+animation:explode 1s forwards;
+
+}
+
+
+
+@keyframes explode{
+
+100%{
+
+transform:scale(25);
+
+opacity:0;
+
+}
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+    <audio id="birthdayMusic" preload="auto">
+    <source src="birthday-music.mp3" type="audio/mpeg">
+</audio>
+
+
+<div class="container">
+
+
+<h1>🎂 Make A Wish 🎂</h1>
+
+
+<div id="text">
+Blow Candle বোতামটিতে ক্লিক করুন। ❤️
+</div>
+
+
+
+<div class="cake">
+
+
+<div class="candle">
+
+<div class="flame" id="flame"></div>
+
+</div>
+
+
+<div class="layer"></div>
+
+<div class="layer"></div>
+
+<div class="layer"></div>
+
+
+</div>
+
+
+
+<button id="blowBtn" onclick="blowCandle()">
+
+🕯️ Blow Candle
+
+</button>
+
+
+<br>
+
+
+<button id="next" onclick="location.href='memories.html'">
+
+Next 📸
+
+</button>
+
+
+</div>
+
+
+
+
+<script>
+
+function blowCandle(){
+
+    // Hide flame
+    document.getElementById("flame").style.display="none";
+
+
+    // Hide blow button
+    document.getElementById("blowBtn").style.display="none";
+
+
+    // Change message
+    document.getElementById("text").innerHTML=
+    "🎉 Happy Birthday Rajdip! 🎉<br>May all your wishes come true ❤️";
+
+
+    // Create fireworks
+    createFireworks();
+
+    // Show next button
+    document.getElementById("next").style.display="inline-block";
+
+}
+
+
+
+function createFireworks(){
+
+    for(let i=0;i<40;i++){
+
+        let fire=document.createElement("div");
+
+        fire.className="firework";
+
+
+        fire.style.left=Math.random()*100+"%";
+
+        fire.style.top=Math.random()*100+"%";
+
+
+        let colors=[
+            "yellow",
+            "red",
+            "cyan",
+            "pink",
+            "lime"
+        ];
+
+
+        fire.style.background=
+        colors[Math.floor(Math.random()*colors.length)];
+
+
+        document.body.appendChild(fire);
+
+
+        setTimeout(()=>{
+
+            fire.remove();
+
+        },1000);
+
+    }
+
+}
+
+
+</script>
+
+</body>
+
+</html>
