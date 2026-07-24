@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pop Balloons 🎈</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#ff9966,#ff5e62);
+
+    font-family:Poppins,sans-serif;
+
+    color:white;
+
+    overflow:hidden;
+
+}
+
+
+
+.container{
+
+    text-align:center;
+
+}
+
+
+
+h1{
+
+    font-size:45px;
+
+}
+
+
+
+#message{
+
+    font-size:25px;
+
+    margin:25px;
+
+}
+
+
+
+#count{
+
+    font-size:22px;
+
+}
+
+
+
+.balloon-area{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    margin-top:50px;
+
+}
+
+
+
+.balloon{
+
+    width:100px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+
+
+.balloon:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:2px;
+
+    height:80px;
+
+    background:white;
+
+    left:50%;
+
+    top:120px;
+
+}
+
+
+
+.balloon:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+.pop{
+
+    animation:pop .4s forwards;
+
+}
+
+
+
+@keyframes pop{
+
+100%{
+
+    transform:scale(1.8);
+
+    opacity:0;
+
+}
+
+}
+
+
+
+button{
+
+    margin-top:30px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:white;
+
+    color:#ff4081;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    display:none;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>🎈 🎈 সব বেলুন ফাটাও 🎈</h1>
+
+
+<div id="count">
+
+Popped: 0 / 4
+
+</div>
+
+
+
+<div id="message">
+
+Click the balloons ❤️
+
+</div>
+
+
+
+<div class="balloon-area">
+
+
+<div class="balloon" style="background:red;"></div>
+
+<div class="balloon" style="background:yellow;"></div>
+
+<div class="balloon" style="background:cyan;"></div>
+
+<div class="balloon" style="background:pink;"></div>
+
+
+</div>
+
+
+
+<button id="next" onclick="location.href='candle.html'">
+
+Next 🕯️
+
+</button>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+let balloons=document.querySelectorAll(".balloon");
+
+let popped=0;
+
+
+let messages=[
+
+"❤️ তুই চিরকাল আমার সেরা বন্ধু!",
+
+"🎂 শুভ জন্মদিন রাজদীপ!",
+
+"🌟 সবসময় হাসিখুশি থাকো!",
+
+" 🎉 তোর জীবন চমৎকার হোক!"
+
+];
+
+
+
+balloons.forEach((balloon,index)=>{
+
+
+balloon.onclick=function(){
+
+
+if(this.style.display==="none")
+return;
+
+
+
+this.classList.add("pop");
+
+
+
+document.getElementById("message").innerHTML=
+messages[index];
+
+
+
+setTimeout(()=>{
+
+this.style.display="none";
+
+},400);
+
+
+
+popped++;
+
+
+document.getElementById("count").innerHTML=
+"Popped: "+popped+" / 4";
+
+
+
+if(popped===4){
+
+
+document.getElementById("message").innerHTML=
+"🎊 All balloons popped! Let's celebrate ❤️";
+
+
+document.getElementById("next").style.display=
+"inline-block";
+
+
+}
+
+
+
+}
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
